@@ -10,6 +10,7 @@ function getall(req,res){
 	connection.query('SELECT * FROM fabricainteligente.Maquinas', function(error, results){
 		if(error){
 			res.sendStatus(500);
+			console.log(error);
 		} else {
 			res.send(results);
 		}
