@@ -2,8 +2,8 @@ const mysql = require('mysql');
 
 var connection = mysql.createConnection({
   host     : 'localhost',
-  user     : 'ubuntu',
-  password : 'Pa$$w0rd'
+  user     : 'root',
+  password : 'Futib@1234'
 });
 
 function getall(req,res){
