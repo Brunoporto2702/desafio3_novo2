@@ -22,7 +22,8 @@ function add(req,res){
 
 	connection.query('INSERT INTO fabricainteligente.Maquinas(Fabricante, Modelo, ip) VALUES (' + values + ')', function(error, results){
 	 	if (error){
-	 		res.sendStatus(500);
+			 res.sendStatus(500);
+			 console.log(error)
 	 	} else {
 			res.send(req.body);
 		}
