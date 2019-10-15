@@ -8,6 +8,12 @@ api.set('port', process.env.PORT || 5000);
 
 api.use(bodyParser.json());
 
+api.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 routes.build(api);
 
 api.listen(api.get('port'));
