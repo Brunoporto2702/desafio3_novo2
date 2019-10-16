@@ -30,7 +30,8 @@ $(document).ready(function(){
 
 		var request = $.ajax({
 			method: "POST",
-			url: "/exemplo/api/maquina",
+			//url: "/exemplo/api/maquina",
+			url: "http://127.0.0.1:5000/api/maquina",
 			data: JSON.stringify(json),
 			contentType: "application/json",
     		dataType: "json",

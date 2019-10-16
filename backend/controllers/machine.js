@@ -12,7 +12,8 @@ function getall(req,res){
 			res.sendStatus(500);
 			console.log(error);
 		} else {
-			res.send(results);
+			res.json(results);
+			console.log(results)
 		}
 	})
 }
