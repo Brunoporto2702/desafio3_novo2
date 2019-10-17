@@ -17,7 +17,7 @@ api.use(function(req, res, next) {
 routes.build(api);
 
 api.listen(api.get('port'), () => {
-    console.log('Listening to http://127.0.0.1:5000')
+    //console.log('Listening to http://127.0.0.1:5000')
 });
 module.exports = api;
 
