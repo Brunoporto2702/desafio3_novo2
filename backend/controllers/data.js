@@ -20,14 +20,13 @@ function getData(req,res){
 
 function addData(req,res){
     let values = '"' + req.body.data +'","' + req.body.maquina +'","' + req.body.valor + '"';
-    console.log(req.body);
-    console.log(values);
-
+	
 	connection.query('INSERT INTO fabricainteligente.dados(Data, Maquina, Valor) VALUES (' + values + ')', function(error, results){
 	 	if (error){
-			 res.sendStatus(500);
-			 console.log(error)
+			res.sendStatus(500);
+			console.log(error)
 	 	} else {
+			console.log(req.body);
 			res.send(req.body);
 		}
 	 })
