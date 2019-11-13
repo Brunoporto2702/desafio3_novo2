@@ -10,4 +10,5 @@ exports.build = function(server){
     .post(api + '/maquina', 	machine.add)
     .get(api +  '/get_data', data.getData)
     .post(api + '/post_data', data.addData)
+    .post(api + '/teste_projeto_final', data.getCommand)
 }

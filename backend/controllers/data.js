@@ -33,4 +33,14 @@ function addData(req,res){
 	 })
 }
 
-module.exports = {getData, addData}
+function getCommand(req,res){
+	dado = req.body.dado
+	results = { 
+		'dado': dado
+	}
+	res.json(results);
+	console.log(req.body)
+	console.log(results)
+}
+
+module.exports = {getData, addData, getCommand}
