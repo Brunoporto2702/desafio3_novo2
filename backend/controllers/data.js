@@ -52,5 +52,39 @@ function getCommand(req,res){
 	})
 }
 
+function sendCommand(req,res){
+	connection.query('Select * from fabricainteligente.projeto_final limit 1', function(error, results){
+		if(error){
+			res.sendStatus(500);
+			console.log(error);
+		} else {
+			if(results[0].valor==0){
+				connection.query("Update fabricainteligente.projeto_final set valor = 1");
+				connection.query('Select * from fabricainteligente.projeto_final limit 1', function(error, results){
+					if(error){
+						res.sendStatus(500);
+						console.log(error);
+					} else {
+						res.json(results[0].valor);
+						console.log(results[0].valor)
+					}
+				})
+			}
+			else{
+				connection.query("Update fabricainteligente.projeto_final set valor = 0");
+				connection.query('Select * from fabricainteligente.projeto_final limit 1', function(error, results){
+					if(error){
+						res.sendStatus(500);
+						console.log(error);
+					} else {
+						res.json(results[0].valor);
+						console.log(results[0].valor)
+					}
+				})
+			}
+		}
+	})
+}
 
-module.exports = {getData, addData, getCommand}
+
+module.exports = {getData, addData, getCommand,sendCommand}

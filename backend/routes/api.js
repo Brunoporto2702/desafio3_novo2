@@ -11,4 +11,5 @@ exports.build = function(server){
     .get(api +  '/get_data', data.getData)
     .post(api + '/post_data', data.addData)
     .post(api + '/teste_projeto_final', data.getCommand)
+    .post(api + '/teste_projeto_final_muda_estado', data.sendCommand)
 }
