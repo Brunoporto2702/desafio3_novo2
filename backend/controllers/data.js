@@ -86,5 +86,12 @@ function sendCommand(req,res){
 	})
 }
 
+function acende(req,res){
+	connection.query("Update fabricainteligente.projeto_final set valor = 1");
+}
+function apaga(req,res){
+	connection.query("Update fabricainteligente.projeto_final set valor = 0");
+}
 
-module.exports = {getData, addData, getCommand,sendCommand}
+
+module.exports = {getData, addData, getCommand,sendCommand,acende,apaga}
