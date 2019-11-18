@@ -52,17 +52,5 @@ function getCommand(req,res){
 	})
 }
 
-function getData(req,res){
-	connection.query('Select * from fabricainteligente.projeto_final limit 1', function(error, results){
-		if(error){
-			res.sendStatus(500);
-			console.log(error);
-		} else {
-			res.json(results.valor);
-			console.log(results.valor)
-		}
-	})
-}
-
 
 module.exports = {getData, addData, getCommand}
