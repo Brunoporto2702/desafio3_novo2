@@ -34,13 +34,35 @@ function addData(req,res){
 }
 
 function getCommand(req,res){
-	dado = req.body.dado
-	results = { 
-		'dado': dado
-	}
-	res.json(results);
-	console.log(req.body)
-	console.log(results)
+	// dado = req.body.dado
+	// results = { 
+	// 	'dado': dado
+	// }
+	// res.json(results);
+	// console.log(req.body)
+	// console.log(results)
+	connection.query('Select * from fabricainteligente.projeto_final limit 1', function(error, results){
+		if(error){
+			res.sendStatus(500);
+			console.log(error);
+		} else {
+			res.json(results.valor);
+			console.log(results.valor)
+		}
+	})
 }
+
+function getData(req,res){
+	connection.query('Select * from fabricainteligente.projeto_final limit 1', function(error, results){
+		if(error){
+			res.sendStatus(500);
+			console.log(error);
+		} else {
+			res.json(results.valor);
+			console.log(results.valor)
+		}
+	})
+}
+
 
 module.exports = {getData, addData, getCommand}
