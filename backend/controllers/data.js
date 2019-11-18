@@ -46,8 +46,8 @@ function getCommand(req,res){
 			res.sendStatus(500);
 			console.log(error);
 		} else {
-			res.json(results.valor);
-			console.log(results.valor)
+			res.json(results);
+			console.log(results)
 		}
 	})
 }
