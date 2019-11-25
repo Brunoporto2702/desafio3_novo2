@@ -48,7 +48,7 @@ function getCommand(req,res){
 		} else {
 			console.log('Entrou get commando')
 			var date = new Date();
-			let values = '"' + date.getTime() +'","' + results[0].valor + '"';
+			let values =   date.getTime() +',' + results[0].valor  ;
 			connection.query('INSERT INTO fabricainteligente.projeto_final_grafico(Data, Valor) VALUES (' + values + ')', function(error, results){
 				if (error){
 					res.sendStatus(500);
