@@ -55,7 +55,6 @@ function getCommand(req,res){
 					console.log(error)
 				} else {
 					console.log(results);
-					res.send(results);
 				}
 			})
 			res.json(results[0].valor);
