@@ -17,8 +17,8 @@ function updateList(dados){
 $(document).ready(function(){
 	$.ajax({
 		method: "GET",
-		url: "/exemplo/api/get_data",
-		//url: "http://127.0.0.1:5000/api/get_data",
+		//cd url: "/exemplo/api/get_data",
+		url: "http://127.0.0.1:5000/api/get_data",
 		dataType: 'json',
 	}).done(function(resp){
 		updateList(resp);

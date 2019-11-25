@@ -46,6 +46,17 @@ function getCommand(req,res){
 			res.sendStatus(500);
 			console.log(error);
 		} else {
+			var date = new Date();
+			let values = '"' + date.getTime() +'","' + results[0].valor + '"';
+			connection.query('INSERT INTO fabricainteligente.projeto_final_grafico(Data, Valor) VALUES (' + values + ')', function(error, results){
+				if (error){
+					res.sendStatus(500);
+					console.log(error)
+				} else {
+					console.log(results);
+					res.send(results);
+				}
+			})
 			res.json(results[0].valor);
 			console.log(results[0].valor)
 		}
@@ -86,6 +97,18 @@ function sendCommand(req,res){
 	})
 }
 
+function showgraph(req,res){
+	connection.query('Select * from fabricainteligente.projeto_final_grafico limit 1', function(error, results){
+		if(error){
+			res.sendStatus(500);
+			console.log(error);
+		} else {
+			res.json(results);
+			console.log(results);
+		}
+	})
+}
+
 function acende(req,res){
 	connection.query("Update fabricainteligente.projeto_final set valor = 1");
 }
@@ -94,4 +117,4 @@ function apaga(req,res){
 }
 
 
-module.exports = {getData, addData, getCommand,sendCommand,acende,apaga}
+module.exports = {getData, addData, getCommand, sendCommand, acende, apaga, showgraph}

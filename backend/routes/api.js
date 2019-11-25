@@ -14,4 +14,5 @@ exports.build = function(server){
     .post(api + '/teste_projeto_final_muda_estado', data.sendCommand)
     .get(api + '/teste_projeto_final_acende', data.acende)
     .get(api + '/teste_projeto_final_apaga', data.apaga)
+    .get(api + '/showgraph', data.showgraph)
 }
