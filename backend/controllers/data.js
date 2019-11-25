@@ -48,7 +48,7 @@ function getCommand(req,res){
 		} else {
 			res.json(results[0].valor);
 			console.log(results[0].valor)
-		}
+			
 			console.log('Entrou get commando')
 			var date = new Date();
 			let values =   date.getTime() +',' + results[0].valor  ;
@@ -60,6 +60,7 @@ function getCommand(req,res){
 					console.log(results);
 				}
 			})
+		}
 	})
 }
 
